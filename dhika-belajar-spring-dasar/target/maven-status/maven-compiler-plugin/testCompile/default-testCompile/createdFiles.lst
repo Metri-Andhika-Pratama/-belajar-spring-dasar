@@ -1,0 +1,10 @@
+com\dhika\dhikabelajarspringdasar\DependsOnTest.class
+com\dhika\dhikabelajarspringdasar\ApplicationContextTest.class
+com\dhika\dhikabelajarspringdasar\DatabaseTest.class
+com\dhika\dhikabelajarspringdasar\DhikaBelajarSpringDasarApplicationTests.class
+com\dhika\dhikabelajarspringdasar\CyclicTest.class
+com\dhika\dhikabelajarspringdasar\DependencyInjectionTest.class
+com\dhika\dhikabelajarspringdasar\PrimaryTest.class
+com\dhika\dhikabelajarspringdasar\BeanNameTest.class
+com\dhika\dhikabelajarspringdasar\DuplicateTest.class
+com\dhika\dhikabelajarspringdasar\BeanTest.class
