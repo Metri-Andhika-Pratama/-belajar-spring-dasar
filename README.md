@@ -1,6 +1,6 @@
 # belajar-spring-dasar
 
-## Pengenalan Spring
+# Pengenalan Spring
 
 Pengenalan Spring Framework
 Spring Framework adalah framework paling populer di Java
@@ -9,7 +9,7 @@ Spring Framework dibuat sekitar tahun 2003 oleh Rod Johnson, yang dibuat sebagai
 Spring Framework semakin populer karena sangat ringan dan mudah digunakan dibandingkan Java Enterprise
 https://spring.io/ 
 
-## Pengenalan Spring Boot
+# Pengenalan Spring Boot
 Spring Boot merupakan framework untuk mempermudah pembuatan aplikasi Spring Framework
 Dahulu untuk menggunakan Spring Framework, untuk pemula tidaklah mudah, karena terlalu banyak yang harus dilakukan sebelum bisa membuat aplikasi
 Spring Boot menjadikan kompleksitas tersebut ditangani secara otomatis oleh Spring Boot, sehingga kita bisa membuat aplikasi Spring Framework secara cepat tanpa harus melakukan pengaturan apapun
@@ -52,7 +52,7 @@ ApplicationContext context =
     new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
 Assertions.assertNotNull(context);
 
-## Singleton
+# Singleton
 Singleton adalah salah satu Design Patterns untuk pembuatan objek, dimana sebuah object hanya dibuat satu kali saja
 Dan ketika kita membutuhkan object tersebut, kita hanya akan menggunakan object yang sama
 https://refactoring.guru/design-patterns/singleton 
@@ -80,7 +80,7 @@ Public class Database {
 # privat agar tidak bisa diakses dari luar Sehingga user terpaksa menggunakan method static tersebut ketika ingin membuat object nya
 
 
-## Bean
+# Bean
 Saat sebuah object kita masukkan kedalam Spring Container IoC, maka kita sebut object tersebut adalah Bean
 Secara default, bean merupakan singleton, artinya jika kita mengakses bean yang sama, maka dia akan mengembalikan object yang sama. Kita juga bisa mengubahnya jika tidak ingin singleton, nanti akan kita bahas di materi tersendiri
 
@@ -108,7 +108,7 @@ Foo foo2 = applicationContext.getBean(Foo.class);
 
 Assertions.assertSame(foo1 , foo2);
 
-## Duplicate Bean
+# Duplicate Bean
 Di Spring, kita bisa mendaftarkan beberapa bean dengan tipe yang sama
 Namun perlu diperhatikan, jika kita membuat bean dengan tipe data yang sama, maka kita harus menggunakan nama bean yang berbeda
 Selain itu, saat kita mengakses bean nya, kita wajib menyebutkan nama bean nya, karena jika tidak, Spring akan bingung harus mengakses bean yang mana
@@ -134,7 +134,7 @@ Foo foo2 = applicationContext.getBean(name: "foo2", Foo.class);
 
 Assertions.assertNotSame(foo1, foo2);
 
-## Primary Bean
+# Primary Bean
 Jika terjadi duplicate bean, selain kita sebutkan nama bean nya ketika ingin mengakses bean nya, kita  juga bisa pilih salah satu bean menjadi primary
 Dengan memilih salah satunya menjadi primary, secara otomatis jika kita mengakses bean tanpa menyebutkan nama bean nya, secara otomatis primary nya yang akan dipilih
 Untuk memilih primary bean, kita bisa tambahkan annotaiton @Primary
@@ -164,7 +164,7 @@ Assertions.assertSame(foo, foo1);
 Assertions.assertNotSame(foo1, foo2);
 
 
-## Mengubah Nama Bean
+# Mengubah Nama Bean
 Secara default, nama bean diambil dari nama method
 Namun kadang-kadang kita tidak ingin menggunakan nama method untuk nama bean
 Saat project kita sudah besar, kadang bisa jadi nama method sama, walaupun isi bean nya berbeda, dan di Spring, nama bean itu unik, tidak boleh sama
@@ -194,7 +194,7 @@ Foo foo2 = applicationContext.getBean(name: "fooSecond", Foo.class);
 Assertions.assertSame(foo, foo1);
 Assertions.assertNotSame(foo1, foo2);
 
-## Dependency Injection
+# Dependency Injection
 Saat kita membuat object, sudah pasti kita sering membuat object yang tergantung dengan object lain
 Dependency Injection (DI) adalah teknik dimana kita bisa mengotomatisasi proses pembuatan object yang tergantung dengan object lain, atau kita sebut dependencies
 Dependencies akan secara otomatis di-inject (dimasukkan) kedalam object yang membutuhkannya
@@ -217,7 +217,7 @@ var bar = new Bar();
 
 var fooBar = new FooBar(foo, bar);
 
-## Spring Dependency Injection
+# Spring Dependency Injection
 Spring sejak awal dikenal dengan framework untuk Dependency Injection
 Ketika kita membuat method untuk bean di Spring, kita bisa menambahkan parameter 
 Secara otomatis Spring akan mencarikan bean lain yang sesuai dengan tipe parameter tersebut
@@ -247,7 +247,7 @@ Assertions.assertSame(fooBar.getBar(), bar);
 Assertions.assertNotSame(fooBar.getFoo(), foo);
 
 
-## Memilih Dependency
+# Memilih Dependency
 Kadang saat menggunakan DI, kita ingin memilih object mana yang ingin kita gunakan
 Saat terdapat duplicate bean dengan tipe data yang sama, secara otomatis Spring akan memilih bean yang primary
 Namun kita juga bisa memilih secara manual jika memang kita inginkan
@@ -269,7 +269,7 @@ FooBar foobar = applicationContext.getBean(FooBar.class);
 Assertions.assertSame(fooBar.getBar(), bar);
 Assertions.assertSame(fooBar.getFoo(), foo);
 
-## Circular Dependencies
+# Circular Dependencies
 Hati-hati dengan curcular dependencies
 Circular dependencies adalah kasus dimana sebuah lingkaran dependency terjadi, misal bean A membutuhkan bean B, bean B membutuhkan bean C, dan ternyata bean C membutuhkan A
 Jika terjadi cyclic seperti ini, secara otomatis Spring bisa mendeteksinya, dan akan mengganggap bahwa itu adalah error
@@ -302,7 +302,7 @@ try {
     exeption.printStackTracer();
 }
 
-## Depends On
+# Depends On
 Saat sebuah bean membutuhkan bean lain, secara otomatis bean tersebut akan dibuat setelah bean yang dibutuhkan dibuat
 Namun bagaimana jika bean tersebut tidak membutuhkan bean lain, namun kita ingin sebuah bean dibuat setelah bean lain dibuat?
 Jika ada kasus seperti itu, kita bisa menggunakan annotation @DependsOn(value={”namaBean”})
@@ -322,7 +322,7 @@ public Bar bar(); {
  return new Bar();
 }
 
-## Lazy Bean
+# Lazy Bean
 Secara default, bean di Spring akan dibuat ketika aplikasi Spring pertama kali berjalan
 Oleh karena itu, kadang ketika aplikasi Spring pertama berjalan akan sedikit lambat, hal ini dikarenakan semua bean akan dibuat di awal
 Namun jika kita mau, kita juga bisa membuat sebuah bean menjadi lazy (malas), dimana bean tidak akan dibuat, sampai memang diakses atau dibutuhkan
