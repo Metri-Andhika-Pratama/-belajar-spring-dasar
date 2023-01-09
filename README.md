@@ -33,12 +33,13 @@ https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframe
 
 ## Kode:HelloWorldConfiguration
 
-import org.springframework.context.annotation.Configuration;
+``` .java import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class HelloWorldConfiguration {
 
 }
+``` .java
 
 ## Configuration Class adalah sebuah class yang terdapat annotation @Configuration pada class tersebut
 
