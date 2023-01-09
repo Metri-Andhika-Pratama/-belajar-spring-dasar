@@ -1,5 +1,10 @@
 # belajar-spring-dasar
 
+Nama : Metri Andhika Pratama
+No.Bp : 2101082009
+Kelas : Teknik Komputer 2B
+
+
 ## Pengenalan Spring
 
 Pengenalan Spring Framework
